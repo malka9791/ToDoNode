@@ -1,11 +1,11 @@
-import express from "express";
-import renderApi from "@api/render-api";
+const express = require("express");
+const renderApi = require("@api/render-api");
 
 const app = express();
 const port = 3000;
 
 // התחברות ל-Render API
-export default renderApi.auth("rnd_42NLAwBctESxEP1BBH17XIjY3uZn");
+renderApi.auth("rnd_42NLAwBctESxEP1BBH17XIjY3uZn");
 
 app.get("/services", async (req, res) => {
   try {
