@@ -7,7 +7,7 @@ const port = 3000;
 // התחברות ל-Render API
 renderApi.auth("rnd_42NLAwBctESxEP1BBH17XIjY3uZn");
 
-app.get("/services", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const { data } = await renderApi.listServices({
       includePreviews: "true",
@@ -18,10 +18,6 @@ app.get("/services", async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Failed to fetch services" });
   }
-});
-
-app.get("/", (req, res) => {
-  res.send("Hello!!!");
 });
 
 app.listen(port, () => {
